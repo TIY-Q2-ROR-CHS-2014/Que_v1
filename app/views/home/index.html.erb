@@ -1,0 +1,19 @@
+<h4>These Guys are in Queue</h4>
+<%= link_to "New Que", new_que_path %>
+<ul>
+  <% @people_in_que.each do |person| %>
+    <li>
+      <%= person.name %>
+      <!-- http://apidock.com/ruby/DateTime/strftime -->
+      <%= person.created_at.strftime("%l:%M%p") %>
+      
+      <!-- <a href="/ques/<%= person.id %>">Show</a> -->
+      <%= link_to "Show", que_path(person) %>
+      |
+      <%= link_to "Edit", edit_que_path(person) %>
+      |
+      <%= link_to "Delete", que_path(person), method: :delete %>
+    </li>  
+  <% end %>
+</ul>
+

@@ -1,0 +1,9 @@
+<h4>New Que</h4>
+
+<%= form_for @que do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: "Name" %>
+  <br>
+  <%= f.submit "Create Que" %>
+<% end %>
+
